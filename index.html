@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Email Verified</title>
+  <script>
+    function openApp() {
+      // Try to open the app
+      window.location = "com.yukthia.yukthia_1://login-callback";
+
+      // Fallback: show a message or redirect to store if app not installed
+      setTimeout(() => {
+        alert("If the app did not open, please return to your device's home screen and open it manually.");
+      }, 1000);
+    }
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -31,6 +42,7 @@
   <div class="container">
     <h1>✅ Email Verified!</h1>
     <p>Your email has been successfully verified. You can now return to the app and log in.</p>
+    <button onclick="openApp()">Open App</button>
   </div>
 </body>
 </html>
