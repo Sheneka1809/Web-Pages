@@ -6,12 +6,15 @@
   <title>Email Verified</title>
   <script>
     function openApp() {
-      // Try to open the app
-      window.location = "com.yukthia.yukthia_1://login-callback";
+      // Create a hidden iframe to trigger the app
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      iframe.src = "com.yukthia.yukthia_1://login-callback";
+      document.body.appendChild(iframe);
 
-      // Fallback: show a message or redirect to store if app not installed
+      // Fallback after 1 second
       setTimeout(() => {
-        alert("If the app did not open, please return to your device's home screen and open it manually.");
+        alert("If the app did not open, please return to your home screen and open the app manually.");
       }, 1000);
     }
   </script>
